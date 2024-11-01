@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+<!--Don't forget your import here-->
+{% from 'bootstrap5/form.html' import render_form %}
+{% block title %}Add List{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8">
+
+      <h1>Add List</h1>
+
+      {{ render_form(form) }}
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

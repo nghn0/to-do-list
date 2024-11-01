@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Task{% endblock %}
+
+{% block content %}
+<div class="task_v">
+    {% if task %}
+        <h1>{{ task.task_n }}</h1>
+        <p class="list_name">List Name: {{ task.list_n }}</p>
+        <h3>Task Description</h3>
+
+        <div class="task_description">
+            <p>{{ task.task_d }}</p>
+        </div>
+
+        <div class="add_list_btn">
+            <a href="{{ url_for('edit_task', task=task.task_n) }}" >EDIT</a>
+        </div>
+    {% endif %}
+    {% if done %}
+        <h1>{{ done.task_n }}</h1>
+        <p class="list_name">List Name: {{ done.list_n }}</p>
+        <h3>Task Description</h3>
+
+        <div class="task_description">
+            <p>{{ done.task_d }}</p>
+        </div>
+
+    {% endif %}
+
+
+</div>
+{% endblock %}

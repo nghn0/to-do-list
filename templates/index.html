@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% block title %}To-do List{% endblock %}
+
+{% block content %}
+<div class="jumbotron text-center">
+    <div class="container">
+  <h1 class="display-4">To-Do List</h1>
+  <p class="lead">Remember your work</p>
+  <hr class="my-4">
+  <p>Keep Track of all the work you have done from here</p>
+</div>
+    </div>
+
+<div class="lists">
+    <div class="s-list">
+        <h1>Done</h1>
+        {% for i in done %}
+            <div class="task">
+                <div class="t-name"><a href="{{ url_for('task',task=i.task_n) }}">{{ i.task_n }}</a></div>
+                <div class="remove"><a href="{{ url_for('remove_done', task=i.task_n ) }}">x</a></div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="s-list">
+        <div class="list_header">
+            <div class="list_h"><h1>Todo</h1></div>
+            <div class="list_add"><a href="#"><h1>+</h1></a></div>
+            <div class="list_remove"><a href="#"><h1>x</h1></a></div>
+        </div>
+        <div class="task">
+            <div class="t-name"><a href="#">jbjbjghghhgvghg</a></div>
+            <div class="done"><a href="#">jbjbj</a></div>
+            <div class="remove"><a href="#">jbjbj</a></div>
+        </div>
+        <div class="task">
+            <div class="t-name"><a href="#">jbjbjghghhgvghg</a></div>
+            <div class="done"><a href="#">jbjbj</a></div>
+            <div class="remove"><a href="#">jbjbj</a></div>
+        </div>
+        <div class="task">
+            <div class="t-name"><a href="#">jbjbjghghhgvghg</a></div>
+            <div class="done"><a href="#">jbjbj</a></div>
+            <div class="remove"><a href="#">jbjbj</a></div>
+        </div>
+        <div class="task">
+            <div class="t-name"><a href="#">jbjbjghghhgvghg</a></div>
+            <div class="done"><a href="#">jbjbj</a></div>
+            <div class="remove"><a href="#">jbjbj</a></div>
+        </div>
+        <div class="task">
+            <div class="t-name"><a href="#">jbjbjghghhgvghg</a></div>
+            <div class="done"><a href="#">jbjbj</a></div>
+            <div class="remove"><a href="#">jbjbj</a></div>
+        </div>
+        <div class="task">
+            <div class="t-name"><a href="#">jbjbjghghhgvghg</a></div>
+            <div class="done"><a href="#">jbjbj</a></div>
+            <div class="remove"><a href="#">jbjbj</a></div>
+        </div>
+        <div class="task">
+            <div class="t-name"><a href="#">jbjbjghghhgvghg</a></div>
+            <div class="done"><a href="#">jbjbj</a></div>
+            <div class="remove"><a href="#">jbjbj</a></div>
+        </div>
+        <div class="task">
+            <div class="t-name"><a href="#">jbjbjghghhgvghg</a></div>
+            <div class="done"><a href="#">jbjbj</a></div>
+            <div class="remove"><a href="#">jbjbj</a></div>
+        </div>
+        <div class="task">
+            <div class="t-name"><a href="#">jbjbjghghhgvghg</a></div>
+            <div class="done"><a href="#">jbjbj</a></div>
+            <div class="remove"><a href="#">jbjbj</a></div>
+        </div>
+        <div class="task">
+            <div class="t-name"><a href="#">jbjbjghghhgvghg</a></div>
+            <div class="done"><a href="#">jbjbj</a></div>
+            <div class="remove"><a href="#">jbjbj</a></div>
+        </div>
+        <div class="task">
+            <div class="t-name"><a href="#">jbjbjghghhgvghg</a></div>
+            <div class="done"><a href="#">jbjbj</a></div>
+            <div class="remove"><a href="#">jbjbj</a></div>
+        </div>
+        <div class="task">
+            <div class="t-name"><a href="#">jbjbjghghhgvghg</a></div>
+            <div class="done"><a href="#">jbjbj</a></div>
+            <div class="remove"><a href="#">jbjbj</a></div>
+        </div>
+    </div>
+
+
+    {% for i,k in list_task.items() %}
+        <div class="s-list">
+            <div class="list_header">
+                <div class="list_h"><h1>{{ i }}</h1></div>
+                <div class="list_add"><a href="{{ url_for('add_task', list=i) }}"><h1>+</h1></a></div>
+                <div class="list_remove"><a href="{{ url_for('remove_list', list=i) }}"><h1>x</h1></a></div>
+            </div>
+            {% for j in k %}
+                <div class="task">
+                    <div class="t-name"><a href="{{ url_for('task',task=j) }}">{{ j }}</a></div>
+                    <div class="done"><a href="{{ url_for('add_done', task=j) }}">v</a></div>
+                    <div class="remove"><a href="{{ url_for('remove_task', task=j) }}">x</a></div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+
+
+
+</div>
+
+<div class="add_list_btn">
+    <a href="{{ url_for('add_list') }}">Add List</a>
+</div>
+
+{% endblock %}
